@@ -1,7 +1,7 @@
 package pl.inpost.discountservice.service;
 
 import org.junit.jupiter.api.Test;
-import pl.inpost.discountservice.dto.ProductOrder;
+import pl.inpost.discountservice.dto.request.ProductOrder;
 import pl.inpost.discountservice.model.AmountDiscount;
 import pl.inpost.discountservice.model.ProductDiscounts;
 import pl.inpost.discountservice.model.ProductPrice;
@@ -16,7 +16,7 @@ import java.util.UUID;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-class ProductPriceServiceTest {
+class ProductPriceServiceImplTest {
     private final ProductDiscountService productDiscountService = mock(ProductDiscountService.class);
     private final ProductPriceService productPriceService = new ProductPriceServiceImpl(productDiscountService);
 

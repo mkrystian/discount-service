@@ -1,4 +1,4 @@
-package pl.inpost.discountservice.dto;
+package pl.inpost.discountservice.dto.request;
 
 import java.math.BigDecimal;
 import java.util.UUID;

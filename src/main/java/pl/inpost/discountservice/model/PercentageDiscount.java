@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Optional;
 
+import static pl.inpost.discountservice.model.Discount.DiscountType.PERCENTAGE;
+
 public record PercentageDiscount(
         String name,
         Optional<Integer> minQuantity,
@@ -11,7 +13,13 @@ public record PercentageDiscount(
         BigDecimal discountPercentage
 ) implements Discount {
 
+    @Override
+    public DiscountType type() {
+        return PERCENTAGE;
+    }
+
     private static final BigDecimal PERCENTAGE_DIVISOR = BigDecimal.valueOf(100);
+
     private static final int SCALE = 2;
 
     @Override

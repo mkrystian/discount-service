@@ -1,6 +1,6 @@
 package pl.inpost.discountservice.service;
 
-import pl.inpost.discountservice.dto.ProductOrder;
+import pl.inpost.discountservice.dto.request.ProductOrder;
 import pl.inpost.discountservice.model.ProductPrice;
 import reactor.core.publisher.Mono;
 

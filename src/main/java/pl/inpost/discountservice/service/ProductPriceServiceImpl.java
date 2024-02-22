@@ -3,7 +3,7 @@ package pl.inpost.discountservice.service;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
-import pl.inpost.discountservice.dto.ProductOrder;
+import pl.inpost.discountservice.dto.request.ProductOrder;
 import pl.inpost.discountservice.model.ProductPrice;
 import reactor.core.publisher.Mono;
 

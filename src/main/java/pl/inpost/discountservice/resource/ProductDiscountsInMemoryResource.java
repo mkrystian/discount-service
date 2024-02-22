@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class ProductDiscountsInMemoryResource implements ProductDiscountsResource {
 
-    private final Map<UUID, ProductDiscounts> productIdDiscounts = new ConcurrentHashMap<>();
+    protected final Map<UUID, ProductDiscounts> productIdDiscounts = new ConcurrentHashMap<>();
 
     @Override
     public Mono<Void> addProductDiscounts(UUID productId, ProductDiscounts productDiscounts) {
