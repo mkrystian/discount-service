@@ -81,6 +81,14 @@ With docker
   - Response body:
     ```json
     {
-      "price": 0
+      "productId": "string",
+      "discountedPrice": 0.0,
+      "appliedDiscount": {
+        "name": "string",
+        "type": "string",
+        "minQuantity": 0,
+        "maxQuantity": 0,
+        "type": "AMOUNT"/"PERCENTAGE"
+      }
     }
     ```
