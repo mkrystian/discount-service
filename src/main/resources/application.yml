@@ -2,9 +2,5 @@ server:
   port: 8080
 
 spring:
-  redis:
-    redisson:
-      file: classpath:redisson-config.yaml
-
   application:
     name: discovery-service

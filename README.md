@@ -33,6 +33,7 @@ This service is created for recruitment purposes.
 
 - For this task purposes the service uses in-memory database, but it could be easily replaced with any other database (preferably Redis, because of its speed)
 - Amount discount is discount of unitPrice not the total price
+- Discount service is not responsible for product unit prices
 - Only one discount can be applied to a product
 - If discount would set price to negative value, the price is set to 0
 - Rounding is done to 2 decimal places with method HALF_UP
@@ -45,10 +46,41 @@ This service is created for recruitment purposes.
 
 ## System requirements
 
-- Java 21
+- Java 21 or Docker
 
 ## How to run
+
+With local Java 21 installed:
 
 - Clone the repository
 - Run `./gradlew bootRun` in the root directory of the project
 - The service will be available at `http://localhost:8080`
+
+With docker
+
+- Clone the repository
+- Run `docker build -t discount-service .` in the root directory of the project
+- Run `docker run -p 8080:8080 discount-service`
+- The service will be available at `http://localhost:8080`
+
+## API
+
+- `GET /product-discounts/{productId}` - get discounts for particular ProductId
+- `PUT /product-discounts/{productId}` - create/override discounts for particular ProductId
+- `DELETE /product-discounts/{productId}` - delete discounts for particular ProductId
+
+- `POST /product-price` - calculate price for particular ProductId and quantity
+  - Request body:
+    ```json
+    {
+      "productId": "string",
+      "quantity": 0,
+      "unitPrice": 0.0
+    }
+    ```
+  - Response body:
+    ```json
+    {
+      "price": 0
+    }
+    ```
